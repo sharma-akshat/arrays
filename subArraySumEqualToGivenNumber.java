@@ -27,7 +27,6 @@ class subArraySumMain
        System.out.println();
      }
    }
-
 }
 
 class Solution
