@@ -37,3 +37,4 @@ class UnionOfSortedArrays
         sc.close();
     }
 }
+// time complexity is O(size1+size2) = O(m+n) -- assuming size1 and size2 as m and n
