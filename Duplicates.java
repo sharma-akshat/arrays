@@ -11,21 +11,7 @@ class Duplicates
                 if(array[i]==array[j]) System.out.println("Duplicate element is : "+array[i]);            }
         }
     }
-    public static void main(String gg[])
-    {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter the size of array: ");
-        int size=sc.nextInt();
-        int array[]=new int[size];
-        for(int i=0;i<size;i++)
-        {
-            System.out.print("Enter the element: ");
-            array[i]=sc.nextInt();
-        }
-        Duplicates d=new Duplicates();
-        d.duplicates(array,size);
-        sc.close();
-    }
+    
 //Time complexity of above code is O(n^2)
 */
 
@@ -39,12 +25,14 @@ void findDuplicates(int[] array,int size)
             else System.out.println(j+" ");
         }
     }
+    //Time complexity of above code is O(n)
+    
     public static void main(String gg[])
     {
         int arr[]={1,2,3,1,5,3,6};
         int size=arr.length;
         Duplicates d=new Duplicates();
         d.findDuplicates(arr,size);
+        //d.duplicates(arr,size); ---> for calling out the duplicates() method
     }
 }
-//Time complexity of above code is O(n)
