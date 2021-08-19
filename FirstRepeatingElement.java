@@ -2,7 +2,7 @@ package array;
 import java.util.*;
 class FirstRepeatingElement
 {
-    //Approach 1
+    //Approach 1 using a temporary array
     int firstRepeated(int[] array, int n)
     {
         int max=0;
@@ -26,7 +26,7 @@ class FirstRepeatingElement
     }
     //Time complexity for above code is O(n)
 
-    //Approach 2
+    //Approach 2 using a HashSet
     void printRepeatingElement(int[] array, int n)
     {
         int index=-1;
@@ -46,9 +46,11 @@ class FirstRepeatingElement
         int array[]={1,2,5,3,6,3,5,7};
         int array2[]={1,2,5,3,6,3,5,7};
         FirstRepeatingElement fre=new FirstRepeatingElement();    
-        int index=fre.firstRepeated(array2,array2.length);
+        
+        int index=fre.firstRepeated(array2,array2.length); //for approach 1
         if(index!=-1) System.out.println("First Repeated element is : "+array[index]);
         else System.out.println("No repeating element");
-        fre.printRepeatingElement(array,array.length);
+        
+        fre.printRepeatingElement(array,array.length); // for approach 2
     }
 }
