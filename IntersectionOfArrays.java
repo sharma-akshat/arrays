@@ -2,7 +2,7 @@ package array;
 import java.util.*;
 class IntersectionOfArrays
 {
-    public void intersection(int[] x,int[] y,int m,int n)
+    public void intersectionOfTwo(int[] x,int[] y,int m,int n)
     {
         int i=0,j=0;
         while(i<m && j<n)
@@ -17,30 +17,41 @@ class IntersectionOfArrays
             }
         }
     }
-    public static void main(String gg[])
+    //Above code shows intersection between two sorted arrays
+
+static void intersectionOfThree(int[] array1,int[] array2,int[] array3)
+{
+    int i=0,j=0,k=0;
+    while(i<array1.length & j<array2.length && k<array3.length)
     {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter the size of 1st array: ");
-        int size1=sc.nextInt();
-        System.out.println("");
-        System.out.print("Enter the size of 2nd array: ");
-        int size2=sc.nextInt();
-        int array1[]=new int[size1];
-        int array2[]=new int[size2];
-        for(int i=0;i<size1;i++)
+        if(array1[i]==array2[j] && array2[j]==array3[k])
         {
-            System.out.print("Enter the element for 1st array: ");
-            array1[i]=sc.nextInt();
+            System.out.print(array1[i]+" ");
+            i++;
+            j++;
+            k++;
         }
-        int j=0;
-        while(j<size2)
-        {
-            System.out.print("Enter the element for 2nd array: ");
-            array2[j]=sc.nextInt();
+        else if(array1[i]<array2[j]){
+            i++;
+        }
+        else if(array2[j]<array3[k]){
             j++;
         }
-        IntersectionOfArrays in=new IntersectionOfArrays();
-        in.intersection(array1,array2,size1,size2);
-        sc.close();
+        else k++;
+    }
+}
+//Above code shows intersection between three sorted arrays
+
+    
+    public static void main(String gg[])
+    {
+        int array1[]={1, 5, 10, 20, 40, 80};
+        int array2[]={6, 7, 10, 20, 80, 100};
+        int array3[]={3, 4, 15, 20, 30, 70, 80, 120};
+        System.out.println("Between array1 and array2 common elements are: ");
+        intersectionOfTwo(array1, array2, array1.length, array2.length);
+        System.out.println();
+        System.out.println("Common elements between all the three arrays are: ");
+        intersectionOfThree(array1, array2, array3);
     }
 }
