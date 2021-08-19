@@ -21,3 +21,4 @@ class ZeroSumSubarray
         else System.out.println("No sub array with sum 0 exists");
     }
 }
+//Time complexity is O(n)
